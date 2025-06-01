@@ -36,13 +36,15 @@ while True:
                 Acertos += 1
                 Pontos += 1
             else:
-                print(f'Resposta errada, a certa era: {pergunta1}')
+                Erros +=1
+                print(f'Resposta errada, a certa era: {pergunta1}, explicação: A pergunta usa past continuous ("What were you doing?"), então a resposta precisa combinar. "Was sleeping" mostra uma ação que estava acontecendo naquele momento. As outras opções estão no tempo verbal errado.')
         else:
             if resposta_pergunta1 == pergunta1:
                 print(f'{nick}, você acertou!')
                 Acertos += 1
                 Pontos +=2
             else:
+                Erros +=1
                 print(f'{nick}, você errou a resposta era {pergunta1}.\
                 \n Explicação: A pergunta usa past continuous ("What were you doing?"), então a resposta precisa combinar. "Was sleeping" mostra uma ação que estava acontecendo naquele momento. As outras opções estão no tempo verbal errado.')
 
@@ -65,13 +67,15 @@ while True:
                 Acertos += 1
                 Pontos += 1
             else:
-                print(f'Resposta errada, a certa era: {pergunta2}')
+                Erros +=1
+                print(f'Resposta errada, a certa era: {pergunta2}, explicação: A pergunta está no past continuous com "was", então a resposta curta correta é "Yes, she was". "Watched", "don’t" e "is watching" estão em tempos verbais errados.')
         else:
             if resposta_pergunta2 == pergunta2:
                 print(f'{nick}, você acertou!')
                 Acertos += 1
                 Pontos +=2
             else:
+                Erros +=1
                 print(f'{nick}, você errou a resposta era {pergunta2}.\
                 \n Explicação: A pergunta está no past continuous com "was", então a resposta curta correta é "Yes, she was". "Watched", "don’t" e "is watching" estão em tempos verbais errados.')
 
@@ -94,13 +98,15 @@ while True:
                 Acertos += 1
                 Pontos += 1
             else:
-                print(f'Resposta errada, a certa era: {pergunta3}')
+                Erros +=1
+                print(f'Resposta errada, a certa era: {pergunta3}, explicação: A ação de cozinhar estava acontecendo quando as luzes se apagaram (ação que interrompe). Usamos "were cooking" para mostrar que estava em progresso. As outras opções estão gramaticalmente erradas ou estão no tempo errado.')
         else:
             if resposta_pergunta3 == pergunta3:
                 print(f'{nick}, você acertou!')
                 Acertos += 1
                 Pontos +=2
             else:
+                Erros +=1
                 print(f'{nick}, você errou a resposta era {pergunta3}.\
                 \n Explicação: A ação de cozinhar estava acontecendo quando as luzes se apagaram (ação que interrompe). Usamos "were cooking" para mostrar que estava em progresso. As outras opções estão gramaticalmente erradas ou estão no tempo errado.')
         
@@ -123,13 +129,15 @@ while True:
                 Acertos += 1
                 Pontos += 1
             else:
-                print(f'Resposta errada, a certa era: {pergunta4}')
+                Erros +=1
+                print(f'Resposta errada, a certa era: {pergunta4}, explicação: Como a pergunta usa "Were they playing...", a resposta correta curta é "Yes, they were". "As outras formas estão erradas no tempo ou na estrutura da resposta."')
         else:
             if resposta_pergunta4 == pergunta4:
                 print(f'{nick}, você acertou!')
                 Acertos += 1
                 Pontos +=2
             else:
+                Erros +=1
                 print(f'{nick}, você errou a resposta era {pergunta4}.\
                 \n Explicação: Como a pergunta usa "Were they playing...", a resposta correta curta é "Yes, they were". "As outras formas estão erradas no tempo ou na estrutura da resposta."')
         
@@ -152,13 +160,15 @@ while True:
                 Acertos += 1
                 Pontos += 1
             else:
-                print(f'Resposta errada, a certa era: {pergunta5}')
+                Erros +=1
+                print(f'Resposta errada, a certa era: {pergunta5}, explicação: A forma correta do negativo no past continuous é "wasn''t' '+ verbo com -ing", como em "wasn’t studying". As outras opções combinam errado os verbos e auxiliares.')
         else:
             if resposta_pergunta5 == pergunta5:
                 print(f'{nick}, você acertou!')
                 Acertos += 1
                 Pontos +=2
             else:
+                Erros +=1
                 print(f'{nick}, você errou a resposta era {pergunta5}.\
                 \n Explicação: A forma correta do negativo no past continuous é "wasn''t' '+ verbo com -ing", como em "wasn’t studying". As outras opções combinam errado os verbos e auxiliares.')
 
@@ -211,13 +221,15 @@ while True:
                 Acertos += 1
                 Pontos += 1
             else:
-                print(f'Resposta errada, a certa era: {pergunta6}')
+                Erros +=1
+                print(f'Resposta errada, a certa era: {pergunta6}, explicação: A frase fala sobre uma ação em um momento específico no passado ("yesterday, at six"). Isso exige o uso do past continuous para mostrar que a ação estava em progresso naquele momento.')
         else:
             if resposta_pergunta6 == pergunta6:
                 print(f'{nick}, você acertou!')
                 Acertos += 1
                 Pontos +=2
             else:
+                Erros +=1
                 print(f'{nick}, você errou a resposta era {pergunta6}.\
                 \n Explicação: A frase fala sobre uma ação em um momento específico no passado ("yesterday, at six"). Isso exige o uso do past continuous para mostrar que a ação estava em progresso naquele momento.')
 
@@ -240,13 +252,15 @@ while True:
                 Acertos += 1
                 Pontos += 1
             else:
-                print(f'Resposta errada, a certa era: {pergunta7}')
+                Erros +=1
+                print(f'Resposta errada, a certa era: {pergunta7}, explicação: A palavra "while" (enquanto) indica que duas ações estavam acontecendo ao mesmo tempo, ou seja, duas ações contínuas no passado.')
         else:
             if resposta_pergunta7 == pergunta7:
                 print(f'{nick}, você acertou!')
                 Acertos += 1
                 Pontos +=2
             else:
+                Erros +=1
                 print(f'{nick}, você errou a resposta era {pergunta7}.\
                 \n Explicação: A palavra "while" (enquanto) indica que duas ações estavam acontecendo ao mesmo tempo, ou seja, duas ações contínuas no passado. ')
 
@@ -269,13 +283,15 @@ while True:
                 Acertos += 1
                 Pontos += 1
             else:
-                print(f'Resposta errada, a certa era: {pergunta8}')
+                Erros +=1
+                print(f'Resposta errada, a certa era: {pergunta8}, explicação: A frase mostra que alguém entrou enquanto nós estávamos falando sobre a escola. A ação de "talking" estava em progresso quando outra ação ("he came in") a interrompeu. Isso pede o uso do past continuous: "We were talking"')
         else:
             if resposta_pergunta8 == pergunta8:
                 print(f'{nick}, você acertou!')
                 Acertos += 1
                 Pontos +=2
             else:
+                Erros +=1
                 print(f'{nick}, você errou a resposta era {pergunta8}.\
                 \n Explicação: A frase mostra que alguém entrou enquanto nós estávamos falando sobre a escola. A ação de "talking" estava em progresso quando outra ação ("he came in") a interrompeu. Isso pede o uso do past continuous: "We were talking"')
         
@@ -298,13 +314,15 @@ while True:
                 Acertos += 1
                 Pontos += 1
             else:
-                print(f'Resposta errada, a certa era: {pergunta9}')
+                Erros +=1
+                print(f'Resposta errada, a certa era: {pergunta9}, explicação: A frase mostra uma situação interrompida pela chuva: "The kids were playing in the garden" (ação contínua) "when it suddenly started to rain" (ação que interrompe) "Were playing" está no past continuous e é a forma correta para plural ("kids").')
         else:
             if resposta_pergunta9 == pergunta9:
                 print(f'{nick}, você acertou!')
                 Acertos += 1
                 Pontos +=2
             else:
+                Erros +=1
                 print(f'{nick}, você errou a resposta era {pergunta9}.\
                 \n Explicação: A frase mostra uma situação interrompida pela chuva: "The kids were playing in the garden" (ação contínua) "when it suddenly started to rain" (ação que interrompe) "Were playing" está no past continuous e é a forma correta para plural ("kids").')
 
@@ -327,13 +345,15 @@ while True:
                 Acertos += 1
                 Pontos += 1
             else:
-                print(f'Resposta errada, a certa era: {pergunta10}')
+                Erros +=1
+                print(f'Resposta errada, a certa era: {pergunta10}, explicação: A expressão "Most of the time" mostra uma situação que acontecia com frequência no passado. Apesar de o simple past também funcionar aqui, o past continuous pode ser usado para enfatizar que era uma ação habitual em progresso.')
         else:
             if resposta_pergunta10 == pergunta10:
                 print(f'{nick}, você acertou!')
                 Acertos += 1
                 Pontos +=2
             else:
+                Erros +=1
                 print(f'{nick}, você errou a resposta era {pergunta10}.\
                 \n Explicação: A expressão "Most of the time" mostra uma situação que acontecia com frequência no passado. Apesar de o simple past também funcionar aqui, o past continuous pode ser usado para enfatizar que era uma ação habitual em progresso.')
         
@@ -386,13 +406,15 @@ while True:
                 Acertos += 1
                 Pontos += 1
             else:
-                print(f'Resposta errada, a certa era: {pergunta11}')
+                Erros +=1
+                print(f'Resposta errada, a certa era: {pergunta11}, explicação: O passado contínuo ("was reading") indica que a ação estava em andamento quando outra ação (as luzes apagando) ocorreu.')
         else:
             if resposta_pergunta11 == pergunta11:
                 print(f'{nick}, você acertou!')
                 Acertos += 1
                 Pontos +=2
             else:
+                Erros +=1
                 print(f'{nick}, você errou a resposta era {pergunta11}.\
                 \n Explicação: O passado contínuo ("was reading") indica que a ação estava em andamento quando outra ação (as luzes apagando) ocorreu.')
         
@@ -415,15 +437,17 @@ while True:
                 Acertos += 1
                 Pontos += 1
             else:
-                print(f'Resposta errada, a certa era: {pergunta12}')
+                Erros +=1
+                print(f'Resposta errada, a certa era: {pergunta12}, explicação: A forma "were discussing" mostra que a conversa estava em andamento, estabelecendo o contexto para o que o gerente disse.')
         else:
             if resposta_pergunta12 == pergunta12:
                 print(f'{nick}, você acertou!')
                 Acertos += 1
                 Pontos +=2
             else:
+                Erros += 1
                 print(f'{nick}, você errou a resposta era {pergunta2}.\
-                \n Explicação: Explicação: A forma "were discussing" mostra que a conversa estava em andamento, estabelecendo o contexto para o que o gerente disse.')
+                \n Explicação: A forma "were discussing" mostra que a conversa estava em andamento, estabelecendo o contexto para o que o gerente disse.')
         
         #Pergunta 13
         pergunta13 = 'a'
