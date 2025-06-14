@@ -1,4 +1,5 @@
 from time import sleep
+cores = {'limpa':'\033[m' ,'ciano' : '\033[36m', 'vermelho' : '\033[31m' , 'verde': '\033[32m' , 'amarelo' : '\033[33m'}
 nome = str(input("Qual seu nome completo? "))
 spr = nome.split()
 Pnome = spr[0]
@@ -19,7 +20,7 @@ while True:
         nick = str(input("Qual seu nome de Jogador? "))
 
         pergunta1 = 'a'
-        print(f"{nick}, vamos para a primeira pergunta.\
+        print(f"{cores['ciano']}{nick}, vamos para a primeira pergunta.{cores['limpa']}\
         \nWhat were you doing at 8 p.m. yesterday?\
         \nQual das opções abaixo é a correta?\
         \nA) I was sleeping\
@@ -29,7 +30,7 @@ while True:
         \nE) Dica (1 ponto a menos)")
         resposta_pergunta1 = str(input("Qual a opção correta? (a, b, c, d ou e): ")).lower()
         if resposta_pergunta1 == 'e':
-            print(f'Muito bem {nick}, a dica é: Use was/were + verbo com -ing para ações que estavam acontecendo no passado.')
+            print(f'Muito bem {nick}, a dica é: {cores["amarelo"]}Use was/were + verbo com -ing para ações que estavam acontecendo no passado.{cores["limpa"]}')
             Rdica = str(input('Qual a resposta? (a, b, c ou d)')).lower()
             if Rdica == pergunta1:
                 print('Você acertou, mas foi com dica, então você ganhará 1 ponto a menos')
@@ -37,20 +38,20 @@ while True:
                 Pontos += 1
             else:
                 Erros +=1
-                print(f'Resposta errada, a certa era: {pergunta1}, explicação: A pergunta usa past continuous ("What were you doing?"), então a resposta precisa combinar. "Was sleeping" mostra uma ação que estava acontecendo naquele momento. As outras opções estão no tempo verbal errado.')
+                print(f'{cores['vermelho']}Resposta errada, a certa era: {pergunta1}{cores['limpa']}, explicação: A pergunta usa past continuous ("What were you doing?"), então a resposta precisa combinar. "Was sleeping" mostra uma ação que estava acontecendo naquele momento. As outras opções estão no tempo verbal errado.')
         else:
             if resposta_pergunta1 == pergunta1:
-                print(f'{nick}, você acertou!')
+                print(f'{cores['verde']}{nick}, você acertou!{cores['limpa']}')
                 Acertos += 1
                 Pontos +=2
             else:
                 Erros +=1
-                print(f'{nick}, você errou a resposta era {pergunta1}.\
+                print(f'{cores['vermelho']}{nick}, você errou a resposta era {pergunta1}.{cores["limpa"]}\
                 \n Explicação: A pergunta usa past continuous ("What were you doing?"), então a resposta precisa combinar. "Was sleeping" mostra uma ação que estava acontecendo naquele momento. As outras opções estão no tempo verbal errado.')
 
         #Pergunta 2
         pergunta2 = 'b'
-        print(f"{nick}, vamos para a próxima pergunta.\
+        print(f"{cores['ciano']}{nick}, vamos para a próxima pergunta.{cores['limpa']}\
         \nWas she watching TV when you called her?\
         \nQual das opções abaixo é a correta?\
         \nA) Yes, she watched.\
@@ -60,7 +61,7 @@ while True:
         \nE) Dica (1 ponto a menos)")
         resposta_pergunta2 = str(input("Qual a opção correta? (a, b, c, d ou e): ")).lower()
         if resposta_pergunta2 == 'e':
-            print(f'Muito bem {nick}, a dica é: Para responder perguntas com "Was/Wasnt", use o mesmo verbo auxiliar na resposta.')
+            print(f'Muito bem {nick}, a dica é: {cores["amarelo"]}Para responder perguntas com "Was/Wasnt", use o mesmo verbo auxiliar na resposta.{cores["limpa"]}')
             Rdica = str(input('Qual a resposta? (a, b, c ou d)')).lower()
             if Rdica == pergunta2:
                 print('Você acertou, mas foi com dica, então você ganhará 1 ponto a menos')
@@ -68,20 +69,20 @@ while True:
                 Pontos += 1
             else:
                 Erros +=1
-                print(f'Resposta errada, a certa era: {pergunta2}, explicação: A pergunta está no past continuous com "was", então a resposta curta correta é "Yes, she was". "Watched", "don’t" e "is watching" estão em tempos verbais errados.')
+                print(f'{cores["vermelho"]}Resposta errada, a certa era: {pergunta2}{cores["limpa"]}, explicação: A pergunta está no past continuous com "was", então a resposta curta correta é "Yes, she was". "Watched", "don’t" e "is watching" estão em tempos verbais errados.')
         else:
             if resposta_pergunta2 == pergunta2:
-                print(f'{nick}, você acertou!')
+                print(f'{cores['verde']}{nick}, você acertou!{cores["limpa"]}')
                 Acertos += 1
                 Pontos +=2
             else:
                 Erros +=1
-                print(f'{nick}, você errou a resposta era {pergunta2}.\
+                print(f'{cores["vermelho"]}{nick}, você errou a resposta era {pergunta2}.{cores["limpa"]}\
                 \n Explicação: A pergunta está no past continuous com "was", então a resposta curta correta é "Yes, she was". "Watched", "don’t" e "is watching" estão em tempos verbais errados.')
 
         #Pergunta 3
         pergunta3 = 'c'
-        print(f"{nick}, vamos para a próxima pergunta.\
+        print(f"{cores['ciano']}{nick}, vamos para a próxima pergunta.{cores['limpa']}\
         \nThey ____ (cook) dinner when the lights went out.\
         \nQual das opções abaixo é a correta?\
         \nA) cooked\
@@ -91,7 +92,7 @@ while True:
         \nE) Dica (1 ponto a menos)")
         resposta_pergunta3 = str(input("Qual a opção correta? (a, b, c, d ou e): ")).lower()
         if resposta_pergunta3 == 'e':
-            print(f'Muito bem {nick}, a dica é: Lembre-se: uma ação em progresso foi interrompida.')
+            print(f'Muito bem {nick}, a dica é: {cores["amarelo"]}Lembre-se: uma ação em progresso foi interrompida.{cores['limpa']}')
             Rdica = str(input('Qual a resposta? (a, b, c ou d)')).lower()
             if Rdica == pergunta3:
                 print('Você acertou, mas foi com dica, então você ganhará 1 ponto a menos')
@@ -99,20 +100,20 @@ while True:
                 Pontos += 1
             else:
                 Erros +=1
-                print(f'Resposta errada, a certa era: {pergunta3}, explicação: A ação de cozinhar estava acontecendo quando as luzes se apagaram (ação que interrompe). Usamos "were cooking" para mostrar que estava em progresso. As outras opções estão gramaticalmente erradas ou estão no tempo errado.')
+                print(f'{cores["vermelho"]}Resposta errada, a certa era: {pergunta3}{cores['limpa']}, explicação: A ação de cozinhar estava acontecendo quando as luzes se apagaram (ação que interrompe). Usamos "were cooking" para mostrar que estava em progresso. As outras opções estão gramaticalmente erradas ou estão no tempo errado.')
         else:
             if resposta_pergunta3 == pergunta3:
-                print(f'{nick}, você acertou!')
+                print(f'{cores['verde']}{nick}, você acertou!{cores['limpa']}')
                 Acertos += 1
                 Pontos +=2
             else:
                 Erros +=1
-                print(f'{nick}, você errou a resposta era {pergunta3}.\
+                print(f'{cores["vermelho"]}{nick}, você errou a resposta era {pergunta3}.{cores['limpa']}\
                 \n Explicação: A ação de cozinhar estava acontecendo quando as luzes se apagaram (ação que interrompe). Usamos "were cooking" para mostrar que estava em progresso. As outras opções estão gramaticalmente erradas ou estão no tempo errado.')
         
         #Pergunta 4
         pergunta4 = 'a'
-        print(f"{nick}, vamos para a próxima pergunta.\
+        print(f"{cores['ciano']}{nick}, vamos para a próxima pergunta.{cores['limpa']}\
         \nWere they playing soccer in the park yesterday afternoon?\
         \nQual das opções abaixo é a correta?\
         \nA) Yes, they were.\
@@ -122,7 +123,7 @@ while True:
         \nE) Dica (1 ponto a menos)")
         resposta_pergunta4 = str(input("Qual a opção correta? (a, b, c, d ou e): ")).lower()
         if resposta_pergunta4 == 'e':
-            print(f'Muito bem {nick}, a dica é: Combine o tempo verbal da pergunta com o da resposta.')
+            print(f'Muito bem {nick}, a dica é: {cores["amarelo"]}Combine o tempo verbal da pergunta com o da resposta.{cores['limpa']}')
             Rdica = str(input('Qual a resposta? (a, b, c ou d)')).lower()
             if Rdica == pergunta4:
                 print('Você acertou, mas foi com dica, então você ganhará 1 ponto a menos')
@@ -130,20 +131,20 @@ while True:
                 Pontos += 1
             else:
                 Erros +=1
-                print(f'Resposta errada, a certa era: {pergunta4}, explicação: Como a pergunta usa "Were they playing...", a resposta correta curta é "Yes, they were". "As outras formas estão erradas no tempo ou na estrutura da resposta."')
+                print(f'Resposta errada, a certa era: {pergunta4}{cores['limpa']}, explicação: Como a pergunta usa "Were they playing...", a resposta correta curta é "Yes, they were". "As outras formas estão erradas no tempo ou na estrutura da resposta."')
         else:
             if resposta_pergunta4 == pergunta4:
-                print(f'{nick}, você acertou!')
+                print(f'{nick}, você acertou!{cores['limpa']}')
                 Acertos += 1
                 Pontos +=2
             else:
                 Erros +=1
-                print(f'{nick}, você errou a resposta era {pergunta4}.\
+                print(f'{cores["vermelho"]}{nick}, você errou a resposta era {pergunta4}.{cores['limpa']}\
                 \n Explicação: Como a pergunta usa "Were they playing...", a resposta correta curta é "Yes, they were". "As outras formas estão erradas no tempo ou na estrutura da resposta."')
         
         #Pergunta 5
         pergunta5 = 'd'
-        print(f"{nick}, vamos para a próxima pergunta.\
+        print(f"{cores['ciano']}{nick}, vamos para a próxima pergunta.{cores['limpa']}\
         \nHe ____ (not study) when his mom arrived.\
         \nQual das opções abaixo é a correta?\
         \nA) wasn't study\
@@ -153,7 +154,7 @@ while True:
         \nE) Dica (1 ponto a menos)")
         resposta_pergunta5 = str(input("Qual a opção correta? (a, b, c, d ou e): ")).lower()
         if resposta_pergunta5 == 'e':
-            print(f'Muito bem {nick}, a dica é: Para frases negativas no past continuous, use wasn’t/weren’t + verbo com -ing.')
+            print(f'Muito bem {nick}, a dica é: {cores["amarelo"]}Para frases negativas no past continuous, use wasn’t/weren’t + verbo com -ing.')
             Rdica = str(input('Qual a resposta? (a, b, c ou d)')).lower()
             if Rdica == pergunta5:
                 print('Você acertou, mas foi com dica, então você ganhará 1 ponto a menos')
@@ -161,19 +162,19 @@ while True:
                 Pontos += 1
             else:
                 Erros +=1
-                print(f'Resposta errada, a certa era: {pergunta5}, explicação: A forma correta do negativo no past continuous é "wasn''t' '+ verbo com -ing", como em "wasn’t studying". As outras opções combinam errado os verbos e auxiliares.')
+                print(f'{cores["vermelho"]}Resposta errada, a certa era: {pergunta5}, explicação: A forma correta do negativo no past continuous é "wasn''t' '+ verbo com -ing", como em "wasn’t studying". As outras opções combinam errado os verbos e auxiliares.')
         else:
             if resposta_pergunta5 == pergunta5:
-                print(f'{nick}, você acertou!')
+                print(f'{cores["verde"]}{nick}, você acertou!{cores['limpa']}')
                 Acertos += 1
                 Pontos +=2
             else:
                 Erros +=1
-                print(f'{nick}, você errou a resposta era {pergunta5}.\
+                print(f'{cores["vermelho"]}{nick}, você errou a resposta era {pergunta5}.\
                 \n Explicação: A forma correta do negativo no past continuous é "wasn''t' '+ verbo com -ing", como em "wasn’t studying". As outras opções combinam errado os verbos e auxiliares.')
 
         #Loja 1
-        print(f'Parabéns {nick}, você subiu um nível de dificuldade, por isso a loja apareceu!\
+        print(f'{cores['ciano']}Parabéns {nick}, você subiu um nível de dificuldade, por isso a loja apareceu!{cores['limpa']}\
               \nEcolha qual item vcoê quer comprar.\
               \n 1-Energético | 2-Mochila | 3- Bola de cristal')
         loja1 = int(input("Qual item você quer? (1, 2 ou 3)"))
