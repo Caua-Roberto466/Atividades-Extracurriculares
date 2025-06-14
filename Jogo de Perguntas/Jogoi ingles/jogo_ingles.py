@@ -154,7 +154,7 @@ while True:
         \nE) Dica (1 ponto a menos)")
         resposta_pergunta5 = str(input("Qual a opção correta? (a, b, c, d ou e): ")).lower()
         if resposta_pergunta5 == 'e':
-            print(f'Muito bem {nick}, a dica é: {cores["amarelo"]}Para frases negativas no past continuous, use wasn’t/weren’t + verbo com -ing.')
+            print(f'Muito bem {nick}, a dica é: {cores["amarelo"]}Para frases negativas no past continuous, use wasn’t/weren’t + verbo com -ing.{cores['limpa']}')
             Rdica = str(input('Qual a resposta? (a, b, c ou d)')).lower()
             if Rdica == pergunta5:
                 print('Você acertou, mas foi com dica, então você ganhará 1 ponto a menos')
@@ -162,7 +162,7 @@ while True:
                 Pontos += 1
             else:
                 Erros +=1
-                print(f'{cores["vermelho"]}Resposta errada, a certa era: {pergunta5}, explicação: A forma correta do negativo no past continuous é "wasn''t' '+ verbo com -ing", como em "wasn’t studying". As outras opções combinam errado os verbos e auxiliares.')
+                print(f'{cores["vermelho"]}Resposta errada, a certa era: {pergunta5}{cores['limpa']}, explicação: A forma correta do negativo no past continuous é "wasn''t' '+ verbo com -ing", como em "wasn’t studying". As outras opções combinam errado os verbos e auxiliares.')
         else:
             if resposta_pergunta5 == pergunta5:
                 print(f'{cores["verde"]}{nick}, você acertou!{cores['limpa']}')
@@ -170,7 +170,7 @@ while True:
                 Pontos +=2
             else:
                 Erros +=1
-                print(f'{cores["vermelho"]}{nick}, você errou a resposta era {pergunta5}.\
+                print(f'{cores["vermelho"]}{nick}, você errou a resposta era {pergunta5}.{cores['limpa']}\
                 \n Explicação: A forma correta do negativo no past continuous é "wasn''t' '+ verbo com -ing", como em "wasn’t studying". As outras opções combinam errado os verbos e auxiliares.')
 
         #Loja 1
