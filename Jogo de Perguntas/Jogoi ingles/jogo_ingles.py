@@ -20,7 +20,7 @@ while True:
         nick = str(input("Qual seu nome de Jogador? "))
 
         pergunta1 = 'a'
-        print(f"{cores['ciano']}{nick}, vamos para a primeira pergunta.{cores['limpa']}\
+        print(f"\n{cores['ciano']}{nick}, vamos para a primeira pergunta.{cores['limpa']}\
         \nWhat were you doing at 8 p.m. yesterday?\
         \nQual das opções abaixo é a correta?\
         \nA) I was sleeping\
@@ -30,7 +30,7 @@ while True:
         \nE) Dica (1 ponto a menos)")
         resposta_pergunta1 = str(input("Qual a opção correta? (a, b, c, d ou e): ")).lower()
         if resposta_pergunta1 == 'e':
-            print(f'Muito bem {nick}, a dica é: {cores["amarelo"]}Use was/were + verbo com -ing para ações que estavam acontecendo no passado.{cores["limpa"]}')
+            print(f'{cores['ciano']}Muito bem {nick}{cores['limpa']}, a dica é: {cores["amarelo"]}Use was/were + verbo com -ing para ações que estavam acontecendo no passado.{cores["limpa"]}')
             Rdica = str(input('Qual a resposta? (a, b, c ou d)')).lower()
             if Rdica == pergunta1:
                 print('Você acertou, mas foi com dica, então você ganhará 1 ponto a menos')
@@ -51,7 +51,7 @@ while True:
 
         #Pergunta 2
         pergunta2 = 'b'
-        print(f"{cores['ciano']}{nick}, vamos para a próxima pergunta.{cores['limpa']}\
+        print(f"\n{cores['ciano']}{nick}, vamos para a próxima pergunta.{cores['limpa']}\
         \nWas she watching TV when you called her?\
         \nQual das opções abaixo é a correta?\
         \nA) Yes, she watched.\
@@ -61,7 +61,7 @@ while True:
         \nE) Dica (1 ponto a menos)")
         resposta_pergunta2 = str(input("Qual a opção correta? (a, b, c, d ou e): ")).lower()
         if resposta_pergunta2 == 'e':
-            print(f'Muito bem {nick}, a dica é: {cores["amarelo"]}Para responder perguntas com "Was/Wasnt", use o mesmo verbo auxiliar na resposta.{cores["limpa"]}')
+            print(f'{cores['ciano']}Muito bem {nick}{cores['limpa']}, a dica é: {cores["amarelo"]}Para responder perguntas com "Was/Wasnt", use o mesmo verbo auxiliar na resposta.{cores["limpa"]}')
             Rdica = str(input('Qual a resposta? (a, b, c ou d)')).lower()
             if Rdica == pergunta2:
                 print('Você acertou, mas foi com dica, então você ganhará 1 ponto a menos')
@@ -82,7 +82,7 @@ while True:
 
         #Pergunta 3
         pergunta3 = 'c'
-        print(f"{cores['ciano']}{nick}, vamos para a próxima pergunta.{cores['limpa']}\
+        print(f"\n{cores['ciano']}{nick}, vamos para a próxima pergunta.{cores['limpa']}\
         \nThey ____ (cook) dinner when the lights went out.\
         \nQual das opções abaixo é a correta?\
         \nA) cooked\
@@ -92,7 +92,7 @@ while True:
         \nE) Dica (1 ponto a menos)")
         resposta_pergunta3 = str(input("Qual a opção correta? (a, b, c, d ou e): ")).lower()
         if resposta_pergunta3 == 'e':
-            print(f'Muito bem {nick}, a dica é: {cores["amarelo"]}Lembre-se: uma ação em progresso foi interrompida.{cores['limpa']}')
+            print(f'{cores['ciano']}Muito bem {nick}{cores['limpa']}, a dica é: {cores["amarelo"]}Lembre-se: uma ação em progresso foi interrompida.{cores['limpa']}')
             Rdica = str(input('Qual a resposta? (a, b, c ou d)')).lower()
             if Rdica == pergunta3:
                 print('Você acertou, mas foi com dica, então você ganhará 1 ponto a menos')
@@ -113,17 +113,17 @@ while True:
         
         #Pergunta 4
         pergunta4 = 'a'
-        print(f"{cores['ciano']}{nick}, vamos para a próxima pergunta.{cores['limpa']}\
+        print(f"\n{cores['ciano']}{nick}, vamos para a próxima pergunta.{cores['limpa']}\
         \nWere they playing soccer in the park yesterday afternoon?\
         \nQual das opções abaixo é a correta?\
         \nA) Yes, they were.\
-        \nB) Yes, they were.\
+        \nB) Yes, they was.\
         \nC) No, they don’t.\
         \nD) They playing soccer.\
         \nE) Dica (1 ponto a menos)")
         resposta_pergunta4 = str(input("Qual a opção correta? (a, b, c, d ou e): ")).lower()
         if resposta_pergunta4 == 'e':
-            print(f'Muito bem {nick}, a dica é: {cores["amarelo"]}Combine o tempo verbal da pergunta com o da resposta.{cores['limpa']}')
+            print(f'{cores['ciano']}Muito bem {nick}{cores['limpa']}, a dica é: {cores["amarelo"]}Combine o tempo verbal da pergunta com o da resposta.{cores['limpa']}')
             Rdica = str(input('Qual a resposta? (a, b, c ou d)')).lower()
             if Rdica == pergunta4:
                 print('Você acertou, mas foi com dica, então você ganhará 1 ponto a menos')
@@ -131,10 +131,10 @@ while True:
                 Pontos += 1
             else:
                 Erros +=1
-                print(f'Resposta errada, a certa era: {pergunta4}{cores['limpa']}, explicação: Como a pergunta usa "Were they playing...", a resposta correta curta é "Yes, they were". "As outras formas estão erradas no tempo ou na estrutura da resposta."')
+                print(f'{cores['vermelho']}Resposta errada, a certa era: {pergunta4}{cores['limpa']}, explicação: Como a pergunta usa "Were they playing...", a resposta correta curta é "Yes, they were". "As outras formas estão erradas no tempo ou na estrutura da resposta."')
         else:
             if resposta_pergunta4 == pergunta4:
-                print(f'{nick}, você acertou!{cores['limpa']}')
+                print(f'{cores['verde']}{nick}, você acertou!{cores['limpa']}')
                 Acertos += 1
                 Pontos +=2
             else:
@@ -144,7 +144,7 @@ while True:
         
         #Pergunta 5
         pergunta5 = 'd'
-        print(f"{cores['ciano']}{nick}, vamos para a próxima pergunta.{cores['limpa']}\
+        print(f"\n{cores['ciano']}{nick}, vamos para a próxima pergunta.{cores['limpa']}\
         \nHe ____ (not study) when his mom arrived.\
         \nQual das opções abaixo é a correta?\
         \nA) wasn't study\
@@ -154,7 +154,7 @@ while True:
         \nE) Dica (1 ponto a menos)")
         resposta_pergunta5 = str(input("Qual a opção correta? (a, b, c, d ou e): ")).lower()
         if resposta_pergunta5 == 'e':
-            print(f'Muito bem {nick}, a dica é: {cores["amarelo"]}Para frases negativas no past continuous, use wasn’t/weren’t + verbo com -ing.{cores['limpa']}')
+            print(f'{cores['ciano']}Muito bem {nick}{cores['limpa']}, a dica é: {cores["amarelo"]}Para frases negativas no past continuous, use wasn’t/weren’t + verbo com -ing.{cores['limpa']}')
             Rdica = str(input('Qual a resposta? (a, b, c ou d)')).lower()
             if Rdica == pergunta5:
                 print('Você acertou, mas foi com dica, então você ganhará 1 ponto a menos')
@@ -174,20 +174,20 @@ while True:
                 \n Explicação: A forma correta do negativo no past continuous é "wasn''t' '+ verbo com -ing", como em "wasn’t studying". As outras opções combinam errado os verbos e auxiliares.')
 
         #Loja 1
-        print(f'{cores['ciano']}Parabéns {nick}, você subiu um nível de dificuldade, por isso a loja apareceu!{cores['limpa']}\
+        print(f'\n{cores['ciano']}Parabéns {nick}, você subiu um nível de dificuldade, por isso a loja apareceu!{cores['limpa']}\
               \nEcolha qual item vcoê quer comprar.\
-              \n 1-Energético | 2-Mochila | 3- Bola de cristal')
+              \n {cores['verde']}1-Energético{cores['limpa']} | {cores['verde']}2-Mochila{cores['limpa']} | {cores['verde']}3- Bola de cristal{cores['limpa']}')
         loja1 = int(input("Qual item você quer? (1, 2 ou 3)"))
         if loja1 == 1:
             if Pontos < 5:
-                print("Você não tem pontos o suficiente para comprar este item.")
+                print(f"{cores['vermelho']}Você não tem pontos o suficiente para comprar este item.{cores['limpa']}")
             else:
                 Pontos -= 5
                 PontosB = Pontos*3
-                print("Você comprou o energético, todos seus pontos triplicaram")
+                print(f"{cores['verde']}Você comprou o energético, todos seus pontos triplicaram{cores['limpa']}")
         elif loja1 == 2:
             if Pontos < 3:
-                print("Você não tem pontos o suficiente para comprar este item.")
+                print(f"{cores['vermelho']}Você não tem pontos o suficiente para comprar este item.{cores['limpa']}")
             else:
                 Pontos -= 3
                 if Erros >= 2:
@@ -195,17 +195,20 @@ while True:
                     PontosB += 4
                 else:
                     PontosB -= 2
-                print("Você comprou a mochila, dois de seus erros viraram pontos")
+                print(f"{cores['verde']}Você comprou a mochila, dois de seus erros viraram pontos{cores['limpa']}")
         elif loja1 == 3:
             if Pontos < 2:
-                print("Você não tem pontos o suficiente para comprar este item.")
+                print(f"{cores['vermelho']} não tem pontos o suficiente para comprar este item.{cores['limpa']}")
             else:
                 Pontos -= 2
-                print("Você comprou a bola de cristal, e você ganhou a resposta da próxima pergunta, ela é D")
+                print(f"{cores['verde']}Você comprou a bola de cristal, e você ganhou a resposta da próxima pergunta, ela é D{cores['limpa']}")
+        else:
+            print("Opção inválida, a loja se foi...")
+            sleep(2)
 
         #Pergunta 6
         pergunta6 = 'd'
-        print(f"{nick}, vamos para a próxima pergunta.\
+        print(f"\n{cores['ciano']}{nick}, vamos para a próxima pergunta.{cores['limpa']}\
         \nYesterday, at six I _____ dinner.\
         \nQual das opções abaixo é a correta?\
         \nA) was prepare\
@@ -215,7 +218,7 @@ while True:
         \nE) Dica (1 ponto a menos)")
         resposta_pergunta6 = str(input("Qual a opção correta? (a, b, c, d ou e): ")).lower()
         if resposta_pergunta6 == 'e':
-            print(f'Muito bem {nick}, a dica é: Começa com "was".')
+            print(f'{cores['ciano']}Muito bem {nick}, a dica é: Começa com "was".{cores['limpa']}')
             Rdica = str(input('Qual a resposta? (a, b, c ou d)')).lower()
             if Rdica == pergunta6:
                 print('Você acertou, mas foi com dica, então você ganhará 1 ponto a menos')
@@ -223,20 +226,20 @@ while True:
                 Pontos += 1
             else:
                 Erros +=1
-                print(f'Resposta errada, a certa era: {pergunta6}, explicação: A frase fala sobre uma ação em um momento específico no passado ("yesterday, at six"). Isso exige o uso do past continuous para mostrar que a ação estava em progresso naquele momento.')
+                print(f'{cores['vermelho']}Resposta errada, a certa era: {pergunta6}{cores['limpa']}, explicação: A frase fala sobre uma ação em um momento específico no passado ("yesterday, at six"). Isso exige o uso do past continuous para mostrar que a ação estava em progresso naquele momento.')
         else:
             if resposta_pergunta6 == pergunta6:
-                print(f'{nick}, você acertou!')
+                print(f'{cores['verde']}{nick}, você acertou!{cores['limpa']}')
                 Acertos += 1
                 Pontos +=2
             else:
                 Erros +=1
-                print(f'{nick}, você errou a resposta era {pergunta6}.\
+                print(f'{cores['vermelho']}{nick}, você errou a resposta era {pergunta6}.{cores['limpa']}\
                 \n Explicação: A frase fala sobre uma ação em um momento específico no passado ("yesterday, at six"). Isso exige o uso do past continuous para mostrar que a ação estava em progresso naquele momento.')
 
         #Pergunta 7
         pergunta7 = 'a'
-        print(f"{nick}, vamos para a próxima pergunta.\
+        print(f"{cores['ciano']}{nick}, vamos para a próxima pergunta.{cores['limpa']}\
         \nMy father ____ a novel while I ___ TV.\
         \nQual das opções abaixo é a correta?\
         \nA) was reading / was watching\
@@ -246,7 +249,7 @@ while True:
         \nE) Dica (1 ponto a menos)")
         resposta_pergunta7 = str(input("Qual a opção correta? (a, b, c, d ou e): ")).lower()
         if resposta_pergunta7 == 'e':
-            print(f'Muito bem {nick}, a dica é: Termina com "was watching".')
+            print(f'{cores['ciano']}Muito bem {nick}{cores['limpa']}, a dica é: {cores['amarelo']}Termina com "was watching".{cores['limpa']}')
             Rdica = str(input('Qual a resposta? (a, b, c ou d)')).lower()
             if Rdica == pergunta7:
                 print('Você acertou, mas foi com dica, então você ganhará 1 ponto a menos')
@@ -254,20 +257,20 @@ while True:
                 Pontos += 1
             else:
                 Erros +=1
-                print(f'Resposta errada, a certa era: {pergunta7}, explicação: A palavra "while" (enquanto) indica que duas ações estavam acontecendo ao mesmo tempo, ou seja, duas ações contínuas no passado.')
+                print(f'{cores['vermelho']}Resposta errada, a certa era: {pergunta7}{cores['limpa']}, explicação: A palavra "while" (enquanto) indica que duas ações estavam acontecendo ao mesmo tempo, ou seja, duas ações contínuas no passado.')
         else:
             if resposta_pergunta7 == pergunta7:
-                print(f'{nick}, você acertou!')
+                print(f'{cores['verde']}{nick}, você acertou!{cores['limpa']}')
                 Acertos += 1
                 Pontos +=2
             else:
                 Erros +=1
-                print(f'{nick}, você errou a resposta era {pergunta7}.\
+                print(f'{cores['vermelho']}{nick}, você errou a resposta era {pergunta7}.{cores['limpa']}\
                 \n Explicação: A palavra "while" (enquanto) indica que duas ações estavam acontecendo ao mesmo tempo, ou seja, duas ações contínuas no passado. ')
 
         #Pergunta 8
         pergunta8 = 'b'
-        print(f"{nick}, vamos para a próxima pergunta.\
+        print(f"{cores['ciano']}{nick}, vamos para a próxima pergunta.{cores['limpa']}\
         \nWe _____ our school when he came in.\
         \nQual das opções abaixo é a correta?\
         \nA) talked\
@@ -277,7 +280,7 @@ while True:
         \nE) Dica (1 ponto a menos)")
         resposta_pergunta8 = str(input("Qual a opção correta? (a, b, c, d ou e): ")).lower()
         if resposta_pergunta8 == 'e':
-            print(f'Muito bem {nick}, a dica é: Começa com "were".')
+            print(f'{cores['ciano']}Muito bem {nick}{cores['limpa']}, a dica é: {cores['amarelo']}Começa com "were".{cores['limpa']}')
             Rdica = str(input('Qual a resposta? (a, b, c ou d)')).lower()
             if Rdica == pergunta8:
                 print('Você acertou, mas foi com dica, então você ganhará 1 ponto a menos')
@@ -285,20 +288,20 @@ while True:
                 Pontos += 1
             else:
                 Erros +=1
-                print(f'Resposta errada, a certa era: {pergunta8}, explicação: A frase mostra que alguém entrou enquanto nós estávamos falando sobre a escola. A ação de "talking" estava em progresso quando outra ação ("he came in") a interrompeu. Isso pede o uso do past continuous: "We were talking"')
+                print(f'{cores['vermelho']}Resposta errada, a certa era: {pergunta8}{cores['limpa']}, explicação: A frase mostra que alguém entrou enquanto nós estávamos falando sobre a escola. A ação de "talking" estava em progresso quando outra ação ("he came in") a interrompeu. Isso pede o uso do past continuous: "We were talking"')
         else:
             if resposta_pergunta8 == pergunta8:
-                print(f'{nick}, você acertou!')
+                print(f'{cores['verde']}{nick}, você acertou!{cores['limpa']}')
                 Acertos += 1
                 Pontos +=2
             else:
                 Erros +=1
-                print(f'{nick}, você errou a resposta era {pergunta8}.\
+                print(f'{cores['vermelho']}{nick}, você errou a resposta era {pergunta8}.{cores['limpa']}\
                 \n Explicação: A frase mostra que alguém entrou enquanto nós estávamos falando sobre a escola. A ação de "talking" estava em progresso quando outra ação ("he came in") a interrompeu. Isso pede o uso do past continuous: "We were talking"')
         
         #Pergunta 9
         pergunta9 = 'a'
-        print(f"{nick}, vamos para a próxima pergunta.\
+        print(f"{cores['ciano']}{nick}, vamos para a próxima pergunta.{cores['limpa']}\
         \nThe kids _____ in the garden when it suddenly started to rain.\
         \n\nQual das opções abaixo é a correta?\
         \nA) were playing\
@@ -308,7 +311,7 @@ while True:
         \nE) Dica (1 ponto a menos)")
         resposta_pergunta9 = str(input("Qual a opção correta? (a, b, c, d ou e): ")).lower()
         if resposta_pergunta9 == 'e':
-            print(f'Muito bem {nick}, a dica é: A resposta é composta por duas palavras.')
+            print(f'{cores['ciano']}Muito bem {nick}{cores['limpa']}, a dica é: {cores['amarelo']}A resposta é composta por duas palavras.{cores['limpa']}')
             Rdica = str(input('Qual a resposta? (a, b, c ou d)')).lower()
             if Rdica == pergunta9:
                 print('Você acertou, mas foi com dica, então você ganhará 1 ponto a menos')
@@ -316,20 +319,20 @@ while True:
                 Pontos += 1
             else:
                 Erros +=1
-                print(f'Resposta errada, a certa era: {pergunta9}, explicação: A frase mostra uma situação interrompida pela chuva: "The kids were playing in the garden" (ação contínua) "when it suddenly started to rain" (ação que interrompe) "Were playing" está no past continuous e é a forma correta para plural ("kids").')
+                print(f'{cores['vermelho']}Resposta errada, a certa era: {pergunta9}{cores['limpa']}, explicação: A frase mostra uma situação interrompida pela chuva: "The kids were playing in the garden" (ação contínua) "when it suddenly started to rain" (ação que interrompe) "Were playing" está no past continuous e é a forma correta para plural ("kids").')
         else:
             if resposta_pergunta9 == pergunta9:
-                print(f'{nick}, você acertou!')
+                print(f'{cores['verde']}{nick}, você acertou!{cores['limpa']}')
                 Acertos += 1
                 Pontos +=2
             else:
                 Erros +=1
-                print(f'{nick}, você errou a resposta era {pergunta9}.\
+                print(f'{cores['vermelho']}{nick}, você errou a resposta era {pergunta9}.{cores['limpa']}\
                 \n Explicação: A frase mostra uma situação interrompida pela chuva: "The kids were playing in the garden" (ação contínua) "when it suddenly started to rain" (ação que interrompe) "Were playing" está no past continuous e é a forma correta para plural ("kids").')
 
         #Pergunta 10
         pergunta10 = 'b'
-        print(f"{nick}, vamos para a próxima pergunta.\
+        print(f"{cores['ciano']}{nick}, vamos para a próxima pergunta.{cores['limpa']}\
         \nMost of the time we ____ in the park.\
         \nQual das opções abaixo é a correta?\
         \nA) were sat\
@@ -339,7 +342,7 @@ while True:
         \nE) Dica (1 ponto a menos)")
         resposta_pergunta10 = str(input("Qual a opção correta? (a, b, c, d ou e): ")).lower()
         if resposta_pergunta10 == 'e':
-            print(f'Muito bem {nick}, a dica é: Começa com "were".')
+            print(f'{cores['ciano']}Muito bem {nick}{cores['limpa']}, a dica é: {cores['amarelo']}Começa com "were".{cores['limpa']}')
             Rdica = str(input('Qual a resposta? (a, b, c ou d)')).lower()
             if Rdica == pergunta10:
                 print('Você acertou, mas foi com dica, então você ganhará 1 ponto a menos')
@@ -347,32 +350,32 @@ while True:
                 Pontos += 1
             else:
                 Erros +=1
-                print(f'Resposta errada, a certa era: {pergunta10}, explicação: A expressão "Most of the time" mostra uma situação que acontecia com frequência no passado. Apesar de o simple past também funcionar aqui, o past continuous pode ser usado para enfatizar que era uma ação habitual em progresso.')
+                print(f'{cores['vermelho']}Resposta errada, a certa era: {pergunta10}{cores['limpa']}, explicação: A expressão "Most of the time" mostra uma situação que acontecia com frequência no passado. Apesar de o simple past também funcionar aqui, o past continuous pode ser usado para enfatizar que era uma ação habitual em progresso.')
         else:
             if resposta_pergunta10 == pergunta10:
-                print(f'{nick}, você acertou!')
+                print(f'{cores['verde']}{nick}, você acertou!{cores['limpa']}')
                 Acertos += 1
                 Pontos +=2
             else:
                 Erros +=1
-                print(f'{nick}, você errou a resposta era {pergunta10}.\
+                print(f'{cores['vermelho']}{nick}, você errou a resposta era {pergunta10}.{cores['limpa']}\
                 \n Explicação: A expressão "Most of the time" mostra uma situação que acontecia com frequência no passado. Apesar de o simple past também funcionar aqui, o past continuous pode ser usado para enfatizar que era uma ação habitual em progresso.')
         
         #Loja 2
-        print(f'Parabéns {nick}, você subiu um nível de dificuldade, por isso a loja apareceu!\
+        print(f'{cores['ciano']}Parabéns {nick}, você subiu um nível de dificuldade, por isso a loja apareceu!{cores['limpa']}\
             \nEcolha qual item vcoê quer comprar.\
-            \n 1-Fazer o Toeic | 2-Mochila | 3- Bola de cristal')
+            \n {cores['verde']}1-Fazer o Toeic{cores['limpa']} | {cores['verde']}2-Mochila{cores['limpa']} | {cores['verde']}3- Bola de cristal{cores['limpa']}')
         loja2 = int(input("Qual item você quer? (1, 2 ou 3)"))
         if loja2 == 1:
             if Pontos < 5:
-                print("Você não tem pontos o suficiente para comprar este item.")
+                print(f"{cores['vermelho']}Você não tem pontos o suficiente para comprar este item.{cores['limpa']}")
             else:
                 Pontos -= 5
                 PontosB += 10
-                print("Você fez o Toeic e acertou tudo, você ganhou 10 pontos a mais")
+                print(f"{cores['verde']}Você fez o Toeic e acertou tudo, você ganhou 10 pontos a mais{cores['limpa']}")
         elif loja2 == 2:
             if Pontos < 3:
-                print("Você não tem pontos o suficiente para comprar este item.")
+                print(f"{cores['vermelho']}Você não tem pontos o suficiente para comprar este item.{cores['limpa']}")
             else:
                 Pontos -= 3
                 if Erros >= 2:
@@ -380,13 +383,16 @@ while True:
                     PontosB += 4
                 else:
                     PontosB -= 2
-                print("Você comprou a mochila, dois de seus erros viraram pontos")
+                print(f"{cores['verde']}Você comprou a mochila, dois de seus erros viraram pontos{cores['limpa']}")
         elif loja2 == 3:
             if Pontos < 2:
-                print("Você não tem pontos o suficiente para comprar este item.")
+                print(f"{cores['vermelho']}Você não tem pontos o suficiente para comprar este item.{cores['limpa']}")
             else:
                 Pontos -= 2
-                print("Você comprou a bola de cristal, e você ganhou a resposta da próxima pergunta, ela é A")
+                print(f"{cores['verde']}Você comprou a bola de cristal, e você ganhou a resposta da próxima pergunta, ela é A{cores['limpa']}")
+        else:
+            print("Opção inválida, a loja se foi...")
+            sleep(2)
 
         #Pergunta 11
         pergunta11 = 'a'
@@ -544,20 +550,20 @@ while True:
                 \n Explicação:  A forma "were preparing" indica que a ação estava em andamento simultaneamente à preparação da apresentação, estabelecendo um contexto temporal.')
         
         #Loja 3
-        print(f'Parabéns {nick}, você subiu um nível de dificuldade, por isso a loja apareceu!\
+        print(f'{cores['ciano']}Parabéns {nick}, você subiu um nível de dificuldade, por isso a loja apareceu!{cores['limpa']}\
             \nEcolha qual item vcoê quer comprar.\
-            \n 1-Fazer o Toeic | 2-Mochila | 3- Bola de cristal')
-        loja3 = int(input("Qual item você quer? (1, 2 ou 3)"))
-        if loja3 == 1:
+            \n {cores['verde']}1-Fazer o Toeic{cores['limpa']} | {cores['verde']}2-Mochila{cores['limpa']} | {cores['verde']}3- Bola de cristal{cores['limpa']}')
+        loja2 = int(input("Qual item você quer? (1, 2 ou 3)"))
+        if loja2 == 1:
             if Pontos < 5:
-                print("Você não tem pontos o suficiente para comprar este item.")
+                print(f"{cores['vermelho']}Você não tem pontos o suficiente para comprar este item.{cores['limpa']}")
             else:
                 Pontos -= 5
                 PontosB += 10
-                print("Você fez o Toeic e acertou tudo, você ganhou 10 pontos a mais")
-        elif loja3 == 2:
+                print(f"{cores['verde']}Você fez o Toeic e acertou tudo, você ganhou 10 pontos a mais{cores['limpa']}")
+        elif loja2 == 2:
             if Pontos < 3:
-                print("Você não tem pontos o suficiente para comprar este item.")
+                print(f"{cores['vermelho']}Você não tem pontos o suficiente para comprar este item.{cores['limpa']}")
             else:
                 Pontos -= 3
                 if Erros >= 2:
@@ -565,13 +571,13 @@ while True:
                     PontosB += 4
                 else:
                     PontosB -= 2
-                print("Você comprou a mochila, dois de seus erros viraram pontos")
-        elif loja3 == 3:
+                print(f"{cores['verde']}Você comprou a mochila, dois de seus erros viraram pontos{cores['limpa']}")
+        elif loja2 == 3:
             if Pontos < 2:
-                print("Você não tem pontos o suficiente para comprar este item.")
+                print(f"{cores['vermelho']}Você não tem pontos o suficiente para comprar este item.{cores['limpa']}")
             else:
                 Pontos -= 2
-                print("Você comprou a bola de cristal, e você ganhou a resposta da próxima pergunta, ela é C")
+                print(f"{cores['verde']}Você comprou a bola de cristal, e você ganhou a resposta da próxima pergunta, ela é C{cores['limpa']}")
         else:
             print("Opção inválida, a loja se foi...")
             sleep(2)
