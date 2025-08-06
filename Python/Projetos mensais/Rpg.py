@@ -24,3 +24,6 @@ if escolha in classes:
           \nForça = {classe['Força']}\
           \nVelçocidade = {classe['Velocidade']}\
           \nResistência = {classe['Resistência']}')
+    força = {classe['Força']}
+    veocidade = {classe['Velocidade']}
+    resistência = {classe['Resistência']}
