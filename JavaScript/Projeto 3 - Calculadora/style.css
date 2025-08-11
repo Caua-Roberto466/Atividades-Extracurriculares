@@ -1,0 +1,34 @@
+body{
+    background-color: #303030;
+    font: 18px Arial normal;
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+main{
+    background-color: white;
+    width: 500px;
+    margin: auto;
+    border-radius: 25px;
+    align-items: center;
+}
+
+#res{
+    color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: 15px;
+}
+
+.numbers{
+    display: block;
+    margin: auto;
+    width: 500px;
+}
+
+label{
+    font-size: 22px;
+    text-align: center;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Projeto 3 - Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+
+    <main>
+        <section class="result">
+            <h2 id="res">O resultado aparecerá aqui</h2>
+        </section>
+        <div class="numbers">
+            <label for="num1">Primeiro Número</label><br>
+            <input type="number" name="num1" id="num1h">
+            <br>
+            <label for="num2">Segundo Número</label><br>
+            <input type="number" name="num2" id="num2h">
+        </div>
+        <div class="botoes">
+            <button onclick="somar()">Somar</button>
+            <button onclick="subtrair()">Subtrair</button>
+            <button onclick="multiplicar()">Multiplicar</button>
+            <button onclick="dividir()">Dividir</button>
+        </div>
+    </main>
+    <script src="script.js" defer></script>
+</body>
+</html>
