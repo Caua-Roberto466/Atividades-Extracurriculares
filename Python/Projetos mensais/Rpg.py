@@ -36,6 +36,7 @@ if escolha in classes:
       velocidade_base = velocidade*random.randint(1,3)
       resistência_base = resistência*random.randint(1,3)
       vida_jogador = 10 + random.randint(1, 5)
+      limite_vida = vida_jogador
 
       #Sistema de níveis
       nível = 1
@@ -48,7 +49,9 @@ if escolha in classes:
                   xp -= xp_up
                   nível += 1
                   xp_up += 5
-                  print(f"Parabéns! Você subiu para o nível {nível}! ")
+                  limite_vida += 5
+                  vida_jogador = limite_vida
+                  print(f"Parabéns! Você subiu para o nível {nível}! Sua vida máxima agora é {vida_jogador}")
                   print(f'agora seu progresso está assim: {xp} / {xp_up}\n')
 
       #Função de ataque
@@ -106,8 +109,18 @@ if escolha in classes:
                   ataqueJ = atacar(força_base, velocidade_base)
                   defesaMF1 = defender(resistência_monstroF1, ataqueJ)
                   vida_monstroF1 -= ataqueJ
-      ganhar_xp(5)
-      print(f'\n{nick}, você venceu! Agora pode passar para a próxima Fase')
+            else:
+                  print('opção inválida')
+
+            if vida_jogador > 0 and vida_monstroF1 <= 0:
+                  print(f'\n{nick}, você venceu! Agora pode passar para a próxima Fase')
+                  print(f'Sua vida está assim: {vida_jogador}/{limite_vida}\n')
+                  ganhar_xp(5)
+            elif vida_jogador <= 0 and vida_monstroF1 > 0:
+                  print(f'{nick}, você perdeu! Mais sorte na próxima\n')
+                  break
+      
+                  
       
 
 else:
