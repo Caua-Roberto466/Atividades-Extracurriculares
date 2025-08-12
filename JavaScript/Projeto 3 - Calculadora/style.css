@@ -1,6 +1,6 @@
 body{
     background-color: #303030;
-    font: 18px Arial normal;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 h1{
@@ -8,12 +8,18 @@ h1{
     text-align: center;
 }
 
-main{
+main {
     background-color: white;
     width: 500px;
     margin: auto;
     border-radius: 25px;
-    align-items: center;
+
+    /* Centralizar conteúdo */
+    display: flex;
+    flex-direction: column; /* mantém os itens em coluna */
+    align-items: center;    /* centraliza horizontalmente */
+    justify-content: center;/* centraliza verticalmente */
+    padding: 20px;          /* espaço interno */
 }
 
 #res{
@@ -31,4 +37,37 @@ main{
 label{
     font-size: 22px;
     text-align: center;
+}
+
+#num1h{
+    display: flex;
+    justify-content: center;
+    border: 2px red solid;
+    width: 200px;
+    height: 25px;
+    border-radius: 12px;
+}
+
+#num2h{
+    display: flex;
+    justify-content: center;
+    border: 2px red solid;
+    width: 200px;
+    height: 25px;
+    border-radius: 12px;
+}
+
+button{
+    width: 100px;
+    height: 30px;
+    border: 2px red solid;
+    border-radius: 8px;
+    font-size: 18px;
+    margin: 10px;
+}
+
+button:hover{
+    background-color: red;
+    color: white;
+    transition: 0.3s;
 }

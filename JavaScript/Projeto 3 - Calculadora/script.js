@@ -34,6 +34,6 @@ function dividir(){
     var res = document.getElementById('res')
     var num1 = Number(num1h.value)
     var num2 = Number(num2h.value)
-    res.innerHTML = `a multiplicação deu ${num1 / num2}`
+    res.innerHTML = `a divisão deu ${num1 / num2}`
     res.style.color = 'black';
 }
