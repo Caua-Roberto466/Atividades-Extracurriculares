@@ -48,6 +48,9 @@ if escolha in classes:
             while xp >= xp_up:
                   xp -= xp_up
                   nível += 1
+                  força_base += 2
+                  resistência_base += 2
+                  velocidade_base += 2
                   xp_up += 5
                   limite_vida += 5
                   vida_jogador = limite_vida
@@ -116,12 +119,54 @@ if escolha in classes:
                   print(f'\n{nick}, você venceu! Agora pode passar para a próxima Fase')
                   print(f'Sua vida está assim: {vida_jogador}/{limite_vida}\n')
                   ganhar_xp(5)
+                  break
             elif vida_jogador <= 0 and vida_monstroF1 > 0:
                   print(f'{nick}, você perdeu! Mais sorte na próxima\n')
                   break
       
+      #Fase 2
+      monstros_fase2 = {
+                  1:{'nome' : 'Lobo Lvl 1', 'força': 3, 'velocidade': 2, 'resistência': 2, 'vida': 11}, 
+                  2:{'nome' : 'Elfo Lvl 1', 'força': 2, 'velocidade': 3, 'resistência': 2, 'vida': 10}, 
+                  3:{'nome' : 'Gnomo Lvl 2', 'força': 2, 'velocidade': 2, 'resistência': 3, 'vida': 9}}
+      monstro_id = random.randint(1, 3)
+      monstroF2 = monstros_fase2[monstro_id]
+      nome_monstroF2 = monstroF2['nome']
+      força_mosntroF2 = monstroF2['força'] * random.randint(1, 3)
+      velocidade_monstroF2 = monstroF2['velocidade'] * random.randint(1, 3)
+      resistência_monstroF2 = monstroF2['resistência']*random.randint(1, 3)
+      vida_monstroF2 = monstroF2['vida']
+      Monstro_Fase2 = [nome_monstroF2, força_mosntroF2, velocidade_monstroF2, resistência_monstroF2, vida_monstroF2]
+
+      while vida_monstroF2 > 0 and vida_jogador >  0:
+            turnoJ = int(input("O que você vai fazer? 1 - Atacar 2 - Defender "))
+            turnoMF2 = random.randint(1, 2)
+            if turnoJ == 1 and turnoMF2 == 1:
+                  ataqueJ = atacar(força_base, velocidade_base)
+                  vida_monstroF2 -= ataqueJ
+                  ataqueMF2 = atacar(força_mosntroF2, velocidade_monstroF2)
+                  vida_jogador -= ataqueMF2
+
+            elif turnoJ == 2 and turnoMF2 == 1:
+                  ataqueMF2 = atacar(força_mosntroF2, velocidade_monstroF2)
+                  defesaJ = defender(resistência_base, ataqueMF1)
+                  vida_jogador -= defesaJ
                   
-      
+            elif turnoJ == 1 and turnoMF2 == 2:
+                  ataqueJ = atacar(força_base, velocidade_base)
+                  defesaMF2 = defender(resistência_monstroF2, ataqueJ)
+                  vida_monstroF2 -= ataqueJ
+            else:
+                  print('opção inválida')
+
+            if vida_jogador > 0 and vida_monstroF2 <= 0:
+                  print(f'\n{nick}, você venceu! Agora pode passar para a próxima Fase')
+                  print(f'Sua vida está assim: {vida_jogador}/{limite_vida}\n')
+                  ganhar_xp(7)
+                  break
+            elif vida_jogador <= 0 and vida_monstroF2 > 0:
+                  print(f'{nick}, você perdeu! Mais sorte na próxima\n')
+                  break
 
 else:
     print("Opção inválida")
