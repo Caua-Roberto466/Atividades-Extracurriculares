@@ -7,6 +7,6 @@ elif questoes < 7:
 elif questoes < 9:
     print("Você tirou B na prova")
 elif questoes <11:
-    print("VOcê tirou A na prova")
+    print("Você tirou A na prova")
 else:
     print("Valor inválido")
