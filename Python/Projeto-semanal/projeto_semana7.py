@@ -12,7 +12,7 @@ x=5
 y=5
 tamanho=10
 
-dx = 7
+dx = 11
 dy = 0
 
 x_c = random.randint(0, 313)
@@ -38,6 +38,8 @@ comida = canvas.create_rectangle(
     fill="red"
 )
 
+crescer_proximo = False
+
 #funções
 def comer():
     cobra_coords = canvas.coords(cabeca)
@@ -53,16 +55,8 @@ def comer():
     return False
 
 def crescer():
-    ultimo = cobra[-1]
-    x1, y1, x2, y2 = canvas.coords(ultimo)
-    novo = canvas.create_rectangle(
-        x1, y1,
-        x2, y2,
-        fill="green",
-        outline="black",
-        width=1
-    )
-    cobra.append(novo)
+    global crescer_proximo
+    crescer_proximo = True
     x_rand = random.randint(0, 313)
     y_rand = random.randint(0, 313)
     canvas.coords(
@@ -70,6 +64,23 @@ def crescer():
         x_rand, y_rand,
         x_rand + tamanho_c, y_rand + tamanho_c
     )
+
+def colisao_corpo():
+    global jogo_ativo
+    cabeca_coords = canvas.coords(cobra[0])
+
+    for parte in cobra[1:]:
+        parte_coords = canvas.coords(parte)
+
+        if (
+            cabeca_coords[0] < parte_coords[2] and
+            cabeca_coords[2] > parte_coords[0] and
+            cabeca_coords[1] < parte_coords[3] and
+            cabeca_coords[3] > parte_coords[1]
+        ):
+            jogo_ativo = False
+            return True
+    return False
 
 def morrer_borda():
     global jogo_ativo
@@ -79,6 +90,7 @@ def morrer_borda():
         canvas.create_text(162, 162, text="Fim de Jogo", fill="red", font=("Arial", 25, "bold"))
 
 def mover_auto():
+    global crescer_proximo
     global x, y
     if not jogo_ativo:
         return
@@ -95,25 +107,86 @@ def mover_auto():
     for i in range(1, len(cobra)):
         canvas.coords(cobra[i], posicoes[i-1])
     
+    if crescer_proximo:
+        x1, y1, x2, y2 = posicoes[-1]
+
+        novo = canvas.create_rectangle(
+            x1, y1,
+            x2, y2,
+            fill="green",
+            outline="black",
+            width=1
+        )
+
+        cobra.append(novo)
+        crescer_proximo = False
+
+    
     if comer():
         crescer()
 
+    if  colisao_corpo():
+        canvas.delete("all")
+        canvas.create_text(162, 162, text="Fim de Jogo", fill="red", font=("Arial", 25, "bold"))
+        return
+
     morrer_borda()
     janela.after(150, mover_auto)
-    
+
+def reiniciar_jogo():
+    global cobra, x, y, dx, dy, jogo_ativo, crescer_proximo, comida, cabeca
+
+    canvas.delete("all")
+
+    cobra = []
+    x = 5
+    y = 5
+    dx = 11
+    dy = 0
+    crescer_proximo = False
+    jogo_ativo = True
+
+    # recriar cabeça
+    cabeca = canvas.create_rectangle(
+        x, y,
+        x + tamanho, y + tamanho,
+        fill="green",
+        outline="black",
+        width=1
+    )
+    cobra.append(cabeca)
+
+    # recriar comida (IMPORTANTE)
+    x_rand = random.randint(0, 313)
+    y_rand = random.randint(0, 313)
+    comida = canvas.create_rectangle(
+        x_rand, y_rand,
+        x_rand + tamanho_c, y_rand + tamanho_c,
+        fill="red"
+    )
+
+    mover_auto()
+
+
+
 def mudar_dir(event):
     global dx, dy
-    if event.keysym == "Up":
+
+    if event.keysym == "space" and not jogo_ativo:
+        reiniciar_jogo()
+        return
+
+    if event.keysym == "Up" and dy == 0:
         dx = 0
-        dy = -7
-    elif event.keysym == "Down":
+        dy = -11
+    elif event.keysym == "Down" and dy == 0:
         dx = 0
-        dy = 7
-    elif event.keysym == "Right":
-        dx = 7
+        dy = 11
+    elif event.keysym == "Right" and dx == 0:
+        dx = 11
         dy = 0
-    elif event.keysym == "Left":
-        dx = -7
+    elif event.keysym == "Left" and dx == 0:
+        dx = -11
         dy = 0
 
 mover_auto()
