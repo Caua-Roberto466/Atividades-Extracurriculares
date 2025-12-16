@@ -5,6 +5,7 @@ janela = tk.Tk() #vai criar a váriavel da janela
 janela.title("Jogo da cobrinha") #da o nome da janela
 janela.geometry("350x350") #tamanho da janela
 janela.resizable(False, False)
+janela.focus_set()
 jogo_ativo = True
 
 cobra=[]
