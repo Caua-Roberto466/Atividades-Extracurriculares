@@ -3,7 +3,7 @@ import tkinter as tk
 
 janela = tk.Tk()
 janela.title("Perguntas e respostas")
-janela.geometry("270x270")
+janela.geometry("500x270")
 janela.resizable(False, False)
 
 #Cria o dicionário das perguntas
@@ -14,7 +14,7 @@ perguntas = {
         'C': 'C) Verde'},
     2:{'pergunta': 'Quando foi declarado a pandemia da Covid?',
        'A': 'A) 2009',
-       'B': 'B) 2018',
+       'B': 'B) 2019',
        'C': 'C) 2020'}
 }
 
@@ -23,7 +23,8 @@ gabarito = ['B', 'C'] #Armazena a ordem correta das respostas
 controle = 1 #váriavel de controle
 controle_gabarito = 0 #controla os índices do gabarito
 
-pergunta_label = tk.Label(janela, text=perguntas[controle]['pergunta'], font=("Helvetica", 15)).pack(pady=16)
+pergunta_label = tk.Label(janela, text=perguntas[controle]['pergunta'], font=("Helvetica", 15))
+pergunta_label.pack(pady=16)
 
 #alternativas
 #a
@@ -43,7 +44,12 @@ pontos_label.place(x=3, y=1)
 
 def adicionar():
     global controle
-    controle += 1
+    if controle < len(perguntas):
+        controle += 1
+        pergunta_label.config(text=perguntas[controle]['pergunta'])
+        alternativa_a.config(text=perguntas[controle]['A'])
+        alternativa_b.config(text=perguntas[controle]['B'])
+        alternativa_c.config(text=perguntas[controle]['C'])
 
 botao = tk.Button(janela, text="Botão", command=adicionar)
 botao.pack()
