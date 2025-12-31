@@ -26,7 +26,7 @@ controle_gabarito = 0 #controla os índices do gabarito
 pergunta_label = tk.Label(janela, text=perguntas[controle]['pergunta'], font=("Helvetica", 15))
 pergunta_label.pack(pady=16)
 
-#alternativas
+#alternativas de resposta 
 #a
 alternativa_a = tk.Label(janela, text=perguntas[controle]['A'], font=("Arial", 10))
 alternativa_a.place(x=3, y=50)
