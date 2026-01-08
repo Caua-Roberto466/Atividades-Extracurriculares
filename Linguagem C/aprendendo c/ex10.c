@@ -6,7 +6,7 @@ int main(){
     scanf("%d", &quantidade_max);
     printf("Digite a quantidade ocupada no estádio: ");
     scanf("%d", &quantidade_ocupada);
-    porcentagem = quantidade_ocupada / quantidade_max * 100;
+    float porcentagem = quantidade_ocupada / quantidade_max * 100;
     if(porcentagem > 90){
         printf("Lotado!");
     }else if(porcentagem > 70){
