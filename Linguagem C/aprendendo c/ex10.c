@@ -7,5 +7,14 @@ int main(){
     printf("Digite a quantidade ocupada no estádio: ");
     scanf("%d", &quantidade_ocupada);
     porcentagem = quantidade_ocupada / quantidade_max * 100;
+    if(porcentagem > 90){
+        printf("Lotado!");
+    }else if(porcentagem > 70){
+        printf("Otima presenca de publico");
+    }else if(porcentagem > 50){
+        printf("Publico razoavel");
+    }else if(porcentagem < 50){
+        printf("Morumbis");
+    }
     return 0;
 }
