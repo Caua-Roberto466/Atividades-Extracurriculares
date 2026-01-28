@@ -6,7 +6,7 @@ int main(){
     printf("Digite o total de partidas: ");
     scanf("%d", &partidas);
 
-    float media = total_gols / partidas;
+    float media = (float)total_gols / partidas;
     printf("A media de gols por partida e: %0.f", media);
     return 0;
 }
