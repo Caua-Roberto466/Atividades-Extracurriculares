@@ -1,9 +1,9 @@
 void main(){
-  bool condicao = false;
+  //bool condicao = false;
   String nome = 'Daves';
   String clima = 'Chuva';
   
-  print(condicao ? 'Condição verdadeira' : 'Condição falsa');
+  //print(condicao ? 'Condição verdadeira' : 'Condição falsa');
   
   print((2 == 3) ? 'menor' : 'maior ou igual');
   
