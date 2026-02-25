@@ -1,1 +1,0 @@
-print("Bom dia flor do dia!") #Exibe a menssagem de bom dia na tela
