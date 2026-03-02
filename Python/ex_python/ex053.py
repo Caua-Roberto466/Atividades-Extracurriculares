@@ -1,6 +1,7 @@
 #Ler uma frase qualquer e dizer se ela é um palíndromo, desconsiderando os espaços. (frase que é igual de trás pra frente desconsiderando os espaços) Ex: a torre da derrota
-frase = input("Digite uma frase para saber se ela é um palíndromo: ").upper()
-frase_formatada = frase.replace(" ", "")
+frase = input("Digite uma frase para saber se ela é um palíndromo: ").strip().upper()
+palavras = frase.split()
+frase_formatada = ''.join(palavras)
 frase_inversa = ""
 
 for char in frase_formatada:
