@@ -2,10 +2,10 @@
 frase = input("Digite uma frase para saber se ela é um palíndromo: ").strip().upper()
 palavras = frase.split()
 frase_formatada = ''.join(palavras)
-frase_inversa = ""
+frase_inversa = frase_formatada[::-1]
 
-for char in frase_formatada:
-    frase_inversa = char + frase_inversa
+'''for char in frase_formatada:
+    frase_inversa = char + frase_inversa'''
 
 print(f'o inverso de {frase_formatada} é {frase_inversa}')
 
