@@ -11,7 +11,8 @@ for i in range(1, n+1):
     else:
         print(f'{cores['vermelho']}{i}{cores['limpa']}' , end=(' '))
 
+print(f'\n{n} foi dividido {dividido} vezes')
 if dividido != 2:
-    print(f'\n{n} foi dividido {dividido} logo não é primo')
+    print(f'logo NÃO É PRIMO')
 else:
-    print(f'\n{n} é primo')
+    print(f'logo É PRIMO')
