@@ -153,4 +153,4 @@ while True:
     
     elif escolha == 0:
         print("Adeus!")
-        break;
+        break
