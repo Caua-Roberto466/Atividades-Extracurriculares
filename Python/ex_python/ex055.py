@@ -7,8 +7,8 @@ maior = 0
 for i in range(0, 5):
     peso = float(input(f"Adicione {i+1}º peso: "))
     if i == 1:
-        menor = i
-        maior = i
+        menor = peso
+        maior = peso
     else:
         if peso > maior:
             maior = peso
