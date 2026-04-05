@@ -1,0 +1,23 @@
+footer{
+    background-color: red;
+    display: flex;
+    gap: 6%;
+    padding-inline: 60px;
+}
+footer h1{
+    color: white;
+}
+footer li{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10%;
+}
+footer li:last-child{
+    padding-bottom: 0;
+}
+footer li a{
+    text-decoration: none;
+    color: white;
+    font-size: 140%;
+}

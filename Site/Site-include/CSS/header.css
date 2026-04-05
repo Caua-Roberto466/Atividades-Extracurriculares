@@ -1,0 +1,22 @@
+header{
+    display: flex;
+    justify-content: space-around;
+    background-image: linear-gradient(35deg, #2266ff, #ff6622);
+    align-items: center;
+}
+header h1{
+    color: white;
+}
+header ul{
+    display: flex;
+    gap: 13%;
+    list-style: none;
+}
+header li{
+    white-space: nowrap;
+    font-size: 140%;
+}
+header a{
+    color: white;
+    text-decoration: none;
+}
