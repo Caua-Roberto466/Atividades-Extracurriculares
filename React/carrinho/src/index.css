@@ -1,0 +1,251 @@
+/*
+CSS feito por ia, restante dos códigos feitos a mão
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #fffdf7;
+  --surface2: #fdf6e3;
+  --ink: #1a1a18;
+  --ink-soft: #5a5a52;
+  --accent: #c0392b;
+  --accent-light: #f9e8e6;
+  --gold: #b8860b;
+  --border: #e0d8c8;
+  --shadow: 0 4px 24px rgba(26,26,24,0.08);
+  --radius: 16px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--ink);
+  min-height: 100vh;
+  padding: 48px 24px;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(184,134,11,0.07) 0%, transparent 50%),
+    radial-gradient(circle at 85% 80%, rgba(192,57,43,0.06) 0%, transparent 50%);
+}
+
+#root {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ── Produtos disponíveis ── */
+.pd {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  animation: slideUp 0.5s ease both;
+}
+
+/* ── Carrinho ── */
+.pc {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  animation: slideUp 0.5s ease 0.1s both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Títulos ── */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border);
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+}
+
+/* ── Card de produto disponível ── */
+.pd > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+
+.pd > div:last-of-type {
+  border-bottom: none;
+}
+
+.con-pd {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.con-pd p {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.con-pd span {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+}
+
+/* ── Botão adicionar ── */
+button.adicionar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  flex-shrink: 0;
+}
+
+button.adicionar:hover {
+  background: var(--gold);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+button.adicionar:active {
+  transform: scale(0.95);
+}
+
+/* ── Itens no carrinho ── */
+.pc > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--border);
+  animation: fadeIn 0.3s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.pc > div p {
+  font-size: 0.95rem;
+  font-weight: 500;
+  flex: 1;
+}
+
+.pc > div span {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-right: auto;
+}
+
+/* ── Botão remover ── */
+button.remover {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+button.remover:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+button.remover:active {
+  transform: scale(0.9);
+}
+
+/* ── Total ── */
+.pc strong {
+  display: block;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 2px solid var(--border);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--ink);
+  text-align: right;
+}
+
+.pc strong::before {
+  content: 'Total: R$ ';
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ── Carrinho vazio ── */
+.pc:has(strong:only-child) strong,
+.pc strong:first-child {
+  color: var(--ink-soft);
+}
+
+/* ── Responsivo ── */
+@media (max-width: 640px) {
+  #root {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    padding: 24px 16px;
+  }
+}
