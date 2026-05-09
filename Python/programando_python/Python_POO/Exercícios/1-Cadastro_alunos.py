@@ -11,21 +11,23 @@ class Aluno:
                 self.notas.append(valor)
     
     def media(self):
-        soma = 0
-        for nota in self.notas:
-            soma += nota
-        
-        quant = len(self.notas)
+        if not self.notas:
+            return 0
+        return sum(self.notas) / len(self.notas)
+    
+alunos = [
+    Aluno(nome="Jorge",idade=15),
+    Aluno(nome="Caio", idade=16),
+    Aluno(nome="Miguel", idade=19)
+]
 
-        media = soma / quant
-        return media
-
-aluno1 = Aluno(nome="Jorge", idade=15)
-print(f"Notas do aluno {aluno1.nome}\n\n")
-try:
-    cont = int(input("Quantas notas você quer adicionar? "))
-    for i in range(0, cont):
-        aluno1.adicionar_nota(valor=(int(input(f"Digite a {i+1}º nota dele: "))))
-
-except ValueError:
-    print("Digite apenas número")
+for aluno in alunos:
+    print(f"Notas do aluno {aluno.nome}")
+    try:
+        cont = int(input("Quantas notas você quer adicionar? "))
+        for i in range(0, cont):
+            aluno.adicionar_nota(int(input(f"Insira a {i+1}º nota do {aluno.nome} ")))
+    except ValueError as e:
+        print(e)
+    else:
+        print(f"A média do {aluno.nome} é: {aluno.media()}")
