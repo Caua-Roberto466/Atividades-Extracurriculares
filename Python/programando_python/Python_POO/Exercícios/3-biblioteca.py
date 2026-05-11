@@ -12,10 +12,10 @@ class Livro: #Cria a calsse livro
 
     def emprestar(self): #Cria a função que vai emprestar o livro se ele estiver disponível
         if not self.disponivel:
-            print("O livro já foi emprestado")
+            print(f"O livro já foi emprestado")
         else:
             self.disponivel = False
-            print("O livro acaba de ser emprestado")
+            print(f"O livro {self.titulo} acaba de ser emprestado")
     
     def devolver(self): #Função que vai devolver o livro se ele não estiver disponível
         if self.disponivel:
@@ -52,9 +52,11 @@ class Biblioteca: #Cria a classe biblioteca
             print("Livros não encontrados")
     
     def listar_disponiveis(self): #Vai listar todos os livros em que disponívle é 'True'
+        cont = 1
         for livro in self.lista:
             if livro.disponivel:
-                print(f"Livro: {livro.titulo} | Autor: {livro.autor}")
+                print(f"{cont}º Livro: {livro.titulo} | Autor: {livro.autor}")
+                cont += 1
 
 minha_biblioteca = Biblioteca()
 
@@ -63,6 +65,7 @@ while True:
           \n1 - Adicionar livro \
           \n2 - Buscar livro por título \
           \n3 - Listar livros \
+          \n4 - pegar livro emprestado\
           \n0 - Sair")
     
     try:
@@ -83,6 +86,15 @@ while True:
                     print(f"Livro: {lv.titulo} | Autor: {lv.autor}")
             else:
                 print("Não há livros registrados")
+        elif escolha == 4:
+            minha_biblioteca.listar_disponiveis()
+            try:
+                escolha = int(input("Qual livro você que pegar emprestado: "))
+            except ValueError:
+                print("Digite um número")
+            else:
+                minha_biblioteca.lista[escolha-1].emprestar()
+
         elif escolha == 0:
             print("Biblioteca fechando...")
             break
