@@ -65,7 +65,8 @@ while True:
           \n1 - Adicionar livro \
           \n2 - Buscar livro por título \
           \n3 - Listar livros \
-          \n4 - pegar livro emprestado\
+          \n4 - Pegar livro emprestado\
+          \n5 - Devolver livro \
           \n0 - Sair")
     
     try:
@@ -78,6 +79,7 @@ while True:
         elif escolha == 2:
             buscar = input("\nDigite o nome do livro que deseja buscar: ")
             minha_biblioteca.buscar_por_titulo(buscar)
+
         elif escolha == 3:
             if len(minha_biblioteca.lista) > 0:
                 quant = len(minha_biblioteca.lista)
@@ -86,6 +88,7 @@ while True:
                     print(f"Livro: {lv.titulo} | Autor: {lv.autor}")
             else:
                 print("Não há livros registrados")
+
         elif escolha == 4:
             minha_biblioteca.listar_disponiveis()
             try:
@@ -94,6 +97,9 @@ while True:
                 print("Digite um número")
             else:
                 minha_biblioteca.lista[escolha-1].emprestar()
+
+        elif escolha == 5:
+            
 
         elif escolha == 0:
             print("Biblioteca fechando...")
