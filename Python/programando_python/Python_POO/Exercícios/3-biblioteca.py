@@ -36,11 +36,11 @@ class Biblioteca: #Cria a classe biblioteca
         titulo = input("Insira o título: ")
         autor = input("Insira o autor: ")
         for lv in self.lista:
-            if titulo in lv.titulo:
+            if titulo in lv.titulo and autor in lv.autor:
                 print("Este livro já está registrado")
-            else:
-                self.lista.append(Livro(titulo, autor))
-                print("Livro adicionado com sucesso!\n")
+                return
+        self.lista.append(Livro(titulo, autor))
+        print("Livro adicionado com sucesso!\n")
     
     def buscar_por_titulo(self, busca): #Função que encontra um objeto na lista com um for e um if inline na lista
         encontrados = [livro for livro in self.lista if busca.lower() == livro.titulo.lower()]
@@ -59,7 +59,7 @@ class Biblioteca: #Cria a classe biblioteca
                 cont += 1
 
 minha_biblioteca = Biblioteca()
-
+livro_pego = []
 while True:
     print("\nEscolha o que fazer \
           \n1 - Adicionar livro \
@@ -97,9 +97,22 @@ while True:
                 print("Digite um número")
             else:
                 minha_biblioteca.lista[escolha-1].emprestar()
+                livro_pego.append(minha_biblioteca.lista[escolha-1])
 
         elif escolha == 5:
-            
+            if len(livro_pego) > 0:
+                for i, lv in enumerate(livro_pego, start=1):
+                    print(f"{i}º Livro: {lv.titulo} | Autor: {lv.autor}")
+                try:
+                    escolha = int(input("Qual livro você vai devolver? "))
+                
+                except ValueError:
+                    print("por favor, digite um número")
+                else:
+                    livro_pego[escolha-1].devolver()
+                    livro_pego.remove(livro_pego[escolha-1])
+            else:
+                print("\nNão há livro a ser devolvido")
 
         elif escolha == 0:
             print("Biblioteca fechando...")
