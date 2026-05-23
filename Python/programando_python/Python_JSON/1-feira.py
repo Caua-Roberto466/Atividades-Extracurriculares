@@ -1,6 +1,6 @@
 import json
 
-ARQUIVO = "frutas.json"
+ARQUIVO = "1-frutas.json"
 
 dados = {
     'frutas': [
