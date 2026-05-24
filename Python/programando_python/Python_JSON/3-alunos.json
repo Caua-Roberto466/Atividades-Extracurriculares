@@ -1,0 +1,31 @@
+[
+    {
+        "nome": "Pedro",
+        "idade": "17",
+        "notas": [
+            10.0
+        ]
+    },
+    {
+        "nome": "Fábio",
+        "idade": 19,
+        "notas": [
+            10.0
+        ]
+    },
+    {
+        "nome": "Fábio",
+        "idade": 19,
+        "notas": []
+    },
+    {
+        "nome": "Fábio",
+        "idade": 10,
+        "notas": []
+    },
+    {
+        "nome": "Fábio Texeira",
+        "idade": 17,
+        "notas": []
+    }
+]
