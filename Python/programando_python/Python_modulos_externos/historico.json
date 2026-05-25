@@ -1,0 +1,16 @@
+[
+    {
+        "Valor": 10.0,
+        "Moeda": "BRL",
+        "Conversão": "USD",
+        "Resultado": 2.0,
+        "Data": "25/05/2026 20:19"
+    },
+    {
+        "Valor": 10.0,
+        "Origem": "BRL",
+        "Conversão": "USD",
+        "Resultado": 2.0,
+        "Data": "25/05/Y 20:24"
+    }
+]
