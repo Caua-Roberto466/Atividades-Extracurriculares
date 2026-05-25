@@ -27,5 +27,13 @@
         "nome": "Fábio Texeira",
         "idade": 17,
         "notas": []
+    },
+    {
+        "nome": "João",
+        "idade": 18,
+        "notas": [
+            10.0,
+            5.0
+        ]
     }
 ]
