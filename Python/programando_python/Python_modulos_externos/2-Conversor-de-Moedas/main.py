@@ -32,7 +32,7 @@ def iniciar():
                 except KeyError:
                     print("\nMoeda inválida, escolha uma da lista")
                 else:
-                    data = datetime.now().strftime("%d/%m/Y %H:%M")
+                    data = datetime.now().strftime("%d/%m/%Y %H:%M")
                     novo_hist = {
                         'Valor': val_conv,
                         'Origem': esc_ori,
@@ -42,7 +42,7 @@ def iniciar():
                     }
                     historico.append(novo_hist)
                     his.salvar(historico)
-                    print(f"\nConverção feita, o resultado é {resultado}")
+                    print(f"\nConverção feita, o resultado é {resultado:.2f}")
             
             elif escolha == 2:
                 hist = his.carregar()
@@ -51,16 +51,21 @@ def iniciar():
                     print("="*20)
                     print(f"Valor: {h['Valor']}")
                     print(f"Origem: {h['Origem']}")
-                    print(f"Conversão: {h['Conversão']}")
                     print(f"Resultado: {h['Resultado']}")
+                    print(f"Conversão: {h['Conversão']}")
                     print(f"Data: {h['Data']}")
                     print("="*20)
             
             elif escolha == 3:
-                hist = his.carregar()
-                hist = []
-                his.salvar(hist)
+                his.salvar([])
                 print("Histórico limpo")
+            
+            elif escolha == 0:
+                print(f"Programa encerrado")
+                break
+            
+            else:
+                print("Opção inválida")
 
 if __name__ == "__main__":
     iniciar()
