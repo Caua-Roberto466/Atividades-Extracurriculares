@@ -23,8 +23,8 @@ def iniciar():
             print("\nDigite um número!")
         else:
             if escolha == 1:
-                esc_ori = input("\nQual moeda converter? BRL | USD | EUR | GBP ").upper()
-                esc_des = input("Qual o destino da vonversão? 1 - BRL | 2 - USD | 3 - EUR | 4 - GBP ").upper()
+                esc_ori = input("\nQual moeda converter? (Escreva a moeda) BRL | USD | EUR | GBP ").upper()
+                esc_des = input("Qual o destino da vonversão? (Escreva a moeda)  BRL | USD | EUR | GBP ").upper()
                 val_conv = float(input("Qual o valor a ser convertido? "))
 
                 try:
@@ -43,6 +43,24 @@ def iniciar():
                     historico.append(novo_hist)
                     his.salvar(historico)
                     print(f"\nConverção feita, o resultado é {resultado}")
+            
+            elif escolha == 2:
+                hist = his.carregar()
+                for h in hist:
+                    
+                    print("="*20)
+                    print(f"Valor: {h['Valor']}")
+                    print(f"Origem: {h['Origem']}")
+                    print(f"Conversão: {h['Conversão']}")
+                    print(f"Resultado: {h['Resultado']}")
+                    print(f"Data: {h['Data']}")
+                    print("="*20)
+            
+            elif escolha == 3:
+                hist = his.carregar()
+                hist = []
+                his.salvar(hist)
+                print("Histórico limpo")
 
 if __name__ == "__main__":
     iniciar()
