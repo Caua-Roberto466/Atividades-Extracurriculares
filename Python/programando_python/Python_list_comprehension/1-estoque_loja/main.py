@@ -38,4 +38,22 @@ while True:
             historico.append(produto)
             salvar(historico)
         elif escolha == 2:
-            pass
+            if len(historico) > 0:
+                categoria = input("\nDigite a categoria que deseja buscar: ")
+                produtos_cat = [p for p in historico if p['categoria'].lower() == categoria.lower()]
+
+                if len(produtos_cat) > 0:
+                    for produto in produtos_cat:
+                        print("")
+                        print("-"*12)
+                        print(f"Produto: {produto['nome']}")
+                        print(f"Preço: {produto['preço']}")
+                        print(f"Categoria: {produto['categoria']}")
+                        print(f"Quantidade: {produto['quantidade']}")
+                        print("-"*12)
+
+                else:
+                    print(f"\nNão há produtos da categoria {categoria}.")
+
+            else:
+                print("\nNão há produtos cadastrados!")
