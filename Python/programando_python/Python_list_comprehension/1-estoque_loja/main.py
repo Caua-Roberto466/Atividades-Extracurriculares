@@ -12,6 +12,15 @@ def menu():
     print("0 - Sair")
     print("-="*25)
 
+def exibir_produto(produto):
+    print("")
+    print("-"*15)
+    print(f"Produto: {produto['nome']}")
+    print(f"Preço: {produto['preço']}")
+    print(f"Categoria: {produto['categoria']}")
+    print(f"Quantidade: {produto['quantidade']}")
+    print("-"*15)
+
 historico = carregar()
 
 while True:
@@ -19,9 +28,12 @@ while True:
     
     try:
         escolha = int(input("O que fazer? "))
+
     except ValueError:
         print("Digite um número")
+
     else:
+
         if escolha == 1:
             nome = input("\nDigite o nome do produto: ")
             preco = float(input("Digite preço do produto: "))
@@ -37,6 +49,8 @@ while True:
 
             historico.append(produto)
             salvar(historico)
+
+
         elif escolha == 2:
             if len(historico) > 0:
                 categoria = input("\nDigite a categoria que deseja buscar: ")
@@ -44,16 +58,24 @@ while True:
 
                 if len(produtos_cat) > 0:
                     for produto in produtos_cat:
-                        print("")
-                        print("-"*12)
-                        print(f"Produto: {produto['nome']}")
-                        print(f"Preço: {produto['preço']}")
-                        print(f"Categoria: {produto['categoria']}")
-                        print(f"Quantidade: {produto['quantidade']}")
-                        print("-"*12)
+                        exibir_produto(produto)
 
                 else:
                     print(f"\nNão há produtos da categoria {categoria}.")
 
             else:
                 print("\nNão há produtos cadastrados!")
+            
+
+        elif escolha == 3:
+            por_preco = sorted(historico, key=lambda a: a['preço'])
+
+            if len(por_preco) > 0:
+                for produto in por_preco:
+                   exibir_produto(produto)
+            
+            else:
+                print("\nNão há produtos cadastrados!")
+
+        else:
+            print("Escolha inválida!")

@@ -1,1 +1,20 @@
-[]
+[
+    {
+        "nome": "Maçã",
+        "preço": 1.2,
+        "categoria": "Frutas",
+        "quantidade": 10
+    },
+    {
+        "nome": "Banana",
+        "preço": 2.1,
+        "categoria": "Frutas",
+        "quantidade": 19
+    },
+    {
+        "nome": "Ovo",
+        "preço": 0.95,
+        "categoria": "Alimentos",
+        "quantidade": 15
+    }
+]
