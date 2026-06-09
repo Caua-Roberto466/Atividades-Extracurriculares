@@ -76,6 +76,9 @@ while True:
             
             else:
                 print("\nNão há produtos cadastrados!")
+        
+        elif escolha == 5:
+            pass
 
         else:
             print("Escolha inválida!")
