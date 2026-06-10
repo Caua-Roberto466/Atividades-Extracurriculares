@@ -78,7 +78,9 @@ while True:
                 print("\nNão há produtos cadastrados!")
         
         elif escolha == 5:
-            pass
+            print("")
+            for i, produto in enumerate(historico, start=1):
+                print(f"{i} - {produto['nome']}: R${produto['preço']}")
 
         else:
             print("Escolha inválida!")
