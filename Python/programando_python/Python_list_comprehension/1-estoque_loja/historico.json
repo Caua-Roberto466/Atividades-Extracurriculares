@@ -22,5 +22,11 @@
         "preço": 2.0,
         "categoria": "Frutas",
         "quantidade": 10
+    },
+    {
+        "nome": "Melancia",
+        "preço": 3.1,
+        "categoria": "Frutas",
+        "quantidade": 12
     }
 ]
