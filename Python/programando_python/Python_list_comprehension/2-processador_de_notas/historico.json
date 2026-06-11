@@ -1,0 +1,35 @@
+[
+    {
+        "nome": "Marcos",
+        "turma": "2º DS",
+        "notas": [
+            10.0,
+            9.0,
+            10.0,
+            2.0
+        ],
+        "media": 7.75
+    },
+    {
+        "nome": "Pedro",
+        "turma": "2º DS",
+        "notas": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+        ],
+        "media": 1.0
+    },
+    {
+        "nome": "Miguel",
+        "turma": "2º DS",
+        "notas": [
+            2.0,
+            1.0,
+            3.0,
+            1.0
+        ],
+        "media": 1.75
+    }
+]
