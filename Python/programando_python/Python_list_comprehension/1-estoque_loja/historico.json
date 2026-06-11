@@ -16,5 +16,11 @@
         "preço": 0.95,
         "categoria": "Alimentos",
         "quantidade": 15
+    },
+    {
+        "nome": "Pêra",
+        "preço": 2.0,
+        "categoria": "Frutas",
+        "quantidade": 10
     }
 ]

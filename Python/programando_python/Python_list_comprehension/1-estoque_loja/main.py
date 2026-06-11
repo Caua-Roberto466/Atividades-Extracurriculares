@@ -14,12 +14,12 @@ def menu():
 
 def exibir_produto(produto):
     print("")
-    print("-"*15)
+    print("-"*25)
     print(f"Produto: {produto['nome']}")
-    print(f"Preço: {produto['preço']}")
+    print(f"Preço: R${produto['preço']:.2f}")
     print(f"Categoria: {produto['categoria']}")
     print(f"Quantidade: {produto['quantidade']}")
-    print("-"*15)
+    print("-"*25)
 
 historico = carregar()
 
@@ -52,35 +52,57 @@ while True:
 
 
         elif escolha == 2:
-            if len(historico) > 0:
+            if not historico:
+                print("\nNão há produtos cadastrados!")
+
+            else:
                 categoria = input("\nDigite a categoria que deseja buscar: ")
                 produtos_cat = [p for p in historico if p['categoria'].lower() == categoria.lower()]
 
-                if len(produtos_cat) > 0:
-                    for produto in produtos_cat:
-                        exibir_produto(produto)
+                if not produtos_cat:
+                    print(f"\nNão há produtos da categoria {categoria}.")
+                    
 
                 else:
-                    print(f"\nNão há produtos da categoria {categoria}.")
-
-            else:
-                print("\nNão há produtos cadastrados!")
+                    for produto in produtos_cat:
+                        exibir_produto(produto)
             
 
         elif escolha == 3:
             por_preco = sorted(historico, key=lambda a: a['preço'])
 
-            if len(por_preco) > 0:
-                for produto in por_preco:
-                   exibir_produto(produto)
+            if not por_preco:
+                print("\nNão há produtos cadastrados!")
             
             else:
-                print("\nNão há produtos cadastrados!")
+                for produto in por_preco:
+                   exibir_produto(produto)
+                
         
+        elif escolha == 4:
+            if not historico:
+                print("\nNão há produtos cadastrados!")
+
+            else:
+                for produto in historico:
+                    print("")
+                    exibir_produto(produto)
+                    print(f"Total: R${produto['preço']*produto['quantidade']:.2f}")
+
+                total_prod = sum(p['preço']*p['quantidade'] for p in historico)
+                print("")
+                print("-="*20)
+                print(f"Total dos produtos: {total_prod:.2f}")
+                print("-="*20)
+
         elif escolha == 5:
             print("")
             for i, produto in enumerate(historico, start=1):
-                print(f"{i} - {produto['nome']}: R${produto['preço']}")
+                print(f"{i} - {produto['nome']}: R${produto['preço']:.2f}")
+
+        elif escolha == 0:
+            print(f"\nPrograma encerrado.")
+            break
 
         else:
-            print("Escolha inválida!")
+            print("\nEscolha inválida!")
