@@ -83,6 +83,15 @@ while True:
                 else:
                     exibir_aluno(reprovados)
         
+        elif escolha == 4:
+            por_media = sorted(historico, key=lambda a: a['media'], reverse=False)
+            
+            menor = por_media[0]
+            maior = por_media[-1]
+                
+            print(f"\nAluno com maior nota: {maior['nome']} | Média: {maior['media']}")
+            print(f"\nAluno com menor nota: {menor['nome']} | Média: {menor['media']}")
+        
         elif escolha == 5:
             for i, aluno in enumerate(historico, start=1):
                 print(f"{i} - Aluno: {aluno['nome']} | Média: {aluno['media']:.1f}")
