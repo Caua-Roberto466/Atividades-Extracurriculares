@@ -20,4 +20,9 @@ while True:
         escolha = int(input("Escolha o que fazer: "))
 
     except ValueError:
-        print("Digite apenas números")
+        print("\nDigite apenas números")
+    
+    else:
+        if escolha == 1:
+            nome = input("\nDigite o nome do funcionário: ")
+            
