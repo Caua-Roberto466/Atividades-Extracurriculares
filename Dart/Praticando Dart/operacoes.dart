@@ -1,4 +1,5 @@
 void main(){
+  //Váriaveis
   double vendas = 345578.85;
   double alugueis = 18560.19;
 
